@@ -9,13 +9,10 @@ import 'package:suitmedia_test_mobile_flutter/features/user_list/bloc/selected_u
 class Injection {
   final di = GetIt.instance;
   void init() {   
-    // Register Repository
     di.registerLazySingleton<UserRepository>(() => UserRepository(di()));
 
-    // Register ApiClient
     di.registerLazySingleton(() => ApiClient());
     
-    // Register Cubit
     di.registerFactory<PalindromeCubit>(() => PalindromeCubit());
     di.registerLazySingleton<SaveUserNameCubit>(() => SaveUserNameCubit());
     di.registerLazySingleton<GetUserListCubit>(() => GetUserListCubit());
