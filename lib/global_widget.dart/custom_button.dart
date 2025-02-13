@@ -18,6 +18,13 @@ class CustomButton extends StatelessWidget {
       height: height,
       child: ElevatedButton(
         style: ButtonStyle(
+          shape: WidgetStatePropertyAll(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                12,
+              ),
+            ),
+          ),
           backgroundColor: WidgetStatePropertyAll(
             Theme.of(context).colorScheme.primary,
           ),

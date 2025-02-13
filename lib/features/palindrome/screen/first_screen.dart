@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:get_it/get_it.dart';
 import 'package:suitmedia_test_mobile_flutter/core/constant/image_constant.dart';
-import 'package:suitmedia_test_mobile_flutter/features/palindrome/cubit/palindrome_cubit.dart';
+import 'package:suitmedia_test_mobile_flutter/features/palindrome/bloc/palindrome_cubit.dart';
 import 'package:suitmedia_test_mobile_flutter/features/palindrome/widgets/button_section.dart';
 import 'package:suitmedia_test_mobile_flutter/features/palindrome/widgets/palindrome_form_section.dart';
 
@@ -57,7 +57,6 @@ class _FirstScreenState extends State<FirstScreen> {
                 const Gap(55),
                 PalindromeFormSection(
                   palindromeController: _palindromeController,
-
                 ),
                 const Gap(32),
                 ButtonSection(

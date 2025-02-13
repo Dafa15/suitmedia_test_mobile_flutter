@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:suitmedia_test_mobile_flutter/core/constant/color_constant.dart';
-import 'package:suitmedia_test_mobile_flutter/features/palindrome/cubit/palindrome_cubit.dart';
+import 'package:suitmedia_test_mobile_flutter/features/palindrome/bloc/palindrome_cubit.dart';
 import 'package:suitmedia_test_mobile_flutter/global_widget.dart/custom_text_form_field.dart';
 
 class PalindromeFormSection extends StatelessWidget {
