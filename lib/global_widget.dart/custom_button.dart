@@ -4,17 +4,19 @@ class CustomButton extends StatelessWidget {
   final String text;
   final Function()? onPressed;
   final double? height;
+  final double? width;
   const CustomButton({
     super.key,
     required this.text,
     this.onPressed,
     this.height = 45,
+    this.width,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
+      width: width ?? double.infinity,
       height: height,
       child: ElevatedButton(
         style: ButtonStyle(

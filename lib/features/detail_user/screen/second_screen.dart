@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:suitmedia_test_mobile_flutter/features/detail_user/bloc/save_user_name_cubit.dart';
+import 'package:suitmedia_test_mobile_flutter/app_routes.dart';
+import 'package:suitmedia_test_mobile_flutter/data/models/user_entity.dart';
+import 'package:suitmedia_test_mobile_flutter/features/detail_user/widgets/user_profile.dart';
+import 'package:suitmedia_test_mobile_flutter/features/user_list/bloc/selected_user_cubit.dart';
 import 'package:suitmedia_test_mobile_flutter/global_widget.dart/custom_app_bar.dart';
 import 'package:suitmedia_test_mobile_flutter/global_widget.dart/custom_button.dart';
 
@@ -21,29 +24,27 @@ class SecondScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  "Welcome",
-                ),
-                BlocBuilder<SaveUserNameCubit, String>(
-                  builder: (context, state) {
-                    return Text(context.watch<SaveUserNameCubit>().state,
-                        style: Theme.of(context).textTheme.headlineMedium);
-                  },
-                ),
-              ],
-            ),
-            Center(
-              child: Text(
-                "Selected User Name",
-                style: Theme.of(context).textTheme.headlineLarge,
-              ),
+            const UserProfile(),
+            BlocBuilder<SelectedUserCubit, UserEntity>(
+              builder: (context, state) {
+                return Center(
+                  child: Text(
+                    state.firstName == null
+                        ? "Selected User Name"
+                        : "${state.firstName} ${state.lastName}",
+                    style: Theme.of(context).textTheme.headlineLarge,
+                  ),
+                );
+              },
             ),
             CustomButton(
               text: "Choose a User",
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  AppRoutes.thirdScreen,
+                );
+              },
             )
           ],
         ),

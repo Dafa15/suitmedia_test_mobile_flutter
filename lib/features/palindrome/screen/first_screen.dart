@@ -30,9 +30,8 @@ class _FirstScreenState extends State<FirstScreen> {
       create: (context) => GetIt.I<PalindromeCubit>(),
       child: Scaffold(
         body: Container(
-          padding: const EdgeInsets.only(
-            left: 20,
-            right: 20,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 20,
           ),
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
@@ -58,7 +57,7 @@ class _FirstScreenState extends State<FirstScreen> {
                 PalindromeFormSection(
                   palindromeController: _palindromeController,
                 ),
-                const Gap(32),
+                const Gap(45),
                 ButtonSection(
                   formKey: _formKey,
                   palindromeController: _palindromeController,

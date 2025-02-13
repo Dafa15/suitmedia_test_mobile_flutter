@@ -19,14 +19,18 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      style: TextStyle(
-        color: ColorConstant.textColor,
-      ),
+      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+            color: ColorConstant.textColor,
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+          ),
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: TextStyle(
-          color: hintColor ?? ColorConstant.hintColor,
-        ),
+        hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              color: hintColor ?? ColorConstant.hintColor,
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+            ),
         errorStyle: const TextStyle(
           fontWeight: FontWeight.bold,
         ),
